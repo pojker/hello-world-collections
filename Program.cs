@@ -134,6 +134,50 @@ The list has 4 people in it
 In C#, indices start at 0, so the largest valid index
 is one less than the number of items in the list.
 So there are 5 names in the list in reality.
+*/
 
 
 
+
+/* SEARCH AND SORT LISTS
+
+Applications may often create lists with many more elements than just 5 names,
+sometimes numbering in the thousands.
+To find elements in these larger collections, I need to search the list for different items. 
+The IndexOf method searches for an item and returns the index of the item.
+If the item isn't in the list, IndexOf returns -1.
+*/
+
+var index = names.IndexOf("Felipe");
+if (index != -1)
+{
+    Console.WriteLine($"The name {names[index]} is at index {index}");
+}
+var notFound = names.IndexOf("Not Found");
+Console.WriteLine($"When an item is not found, IndexOf returns {notFound}");
+
+
+/* Output:
+The name Felipe is at index 1
+When an item is not found, IndexOf returns -1
+*/
+
+
+
+/*
+The items in my list can be sorted as well.
+The Sort method sorts all the items in the list in their normal order (alphabetically for strings).
+*/
+
+names.Sort();
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+/* Output:
+Hello BILL!
+Hello FELIPE!
+Hello MARIA!
+Hello AGA!
+*/
