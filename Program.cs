@@ -205,3 +205,51 @@ foreach(var item in fibonacciNumbers)
 */
 
 
+
+
+/*
+write the code to generate the first 20 numbers in the sequence.
+(As a hint, the 20th Fibonacci number is 6765.)
+*/
+
+var fibonacciNumbers = new List<int> {1, 1};
+
+while (fibonacciNumbers.Count <20)
+{
+    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+    fibonacciNumbers.Add(previous + previous2);
+}
+foreach(var item in fibonacciNumbers)
+{
+    Console.WriteLine(item);
+}
+
+/* Output
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+6765
+
+
+With each iteration of the loop, I'm taking the last two integers in the list,
+summing them, and adding that value to the list.
+The loop repeats until you've added 20 items to the list.
+*/
